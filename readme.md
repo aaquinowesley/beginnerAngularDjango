@@ -46,3 +46,8 @@ https://www.django-rest-framework.org/
 
 ---
 ng generate component heroes --skip-tests
+
+---
+
+pip install -r requirements.txt
+pip freeze > requirements.txt
