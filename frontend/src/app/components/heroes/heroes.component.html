@@ -1,0 +1,45 @@
+<!-- data binding
+<h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div *ngIf="selectedHero">
+  <label for="name">Hero name: </label>
+  Two-way binding
+  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
+<div><span>Json: </span>{{hero | json | uppercase}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+Create mock heroes
+<ul class="heroes">
+  List heroes with *ngFor
+  <li *ngFor="let hero of heroes">
+    event binding
+    (click)="onSelect(hero)"
+    class binding
+    [class.selected]="hero === selectedHero"
+    <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>
+      <span class="name">{{hero.name}}</span>
+    </button>
+  </li>
+</ul> -->
+
+
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <h2>My Heroes</h2>
+  <ul class="heroes"  fxLayout="row wrap" fxLayoutGap="1%">
+    <li *ngFor="let hero of heroes">
+      <button mat-raised-button color="primary" [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+        <pre class="badge">ID: {{hero.id}}</pre>
+        <pre class="name">NAME: {{hero.name}}</pre>
+      </button>
+    </li>
+  </ul>
+  <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div>id: {{selectedHero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+  </div>
+</div>
