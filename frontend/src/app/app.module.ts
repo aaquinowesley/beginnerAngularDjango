@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Angular Material
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar'
@@ -33,14 +33,19 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSortModule} from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

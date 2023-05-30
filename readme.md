@@ -51,3 +51,9 @@ ng generate component heroes --skip-tests
 
 pip install -r requirements.txt
 pip freeze > requirements.txt
+
+---
+
+python manage.py startapp nome_do_app
+python manage.py makemigrations
+python manage.py migrate
